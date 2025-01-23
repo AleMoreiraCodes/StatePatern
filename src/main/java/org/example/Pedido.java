@@ -51,7 +51,7 @@ public class Pedido {
     }
 
     public void setIten(String iten) {
-        this.descricao = iten;
+        this.iten = iten;
     }
 
     public String getIten() {
