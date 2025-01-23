@@ -3,6 +3,7 @@ package org.example;
 public class Pedido {
 
     private String descricao;
+    private String iten;
     private PedidoEstado estado;
 
     public Pedido() {
@@ -41,12 +42,20 @@ public class Pedido {
         return estado.getEstado();
     }
 
-    public String getNome() {
+    public String getDescricao() {
         return descricao;
     }
 
-    public void setNome(String descricao) {
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public void setIten(String iten) {
+        this.descricao = iten;
+    }
+
+    public String getIten() {
+        return iten;
     }
 
     public PedidoEstado getEstado() {
