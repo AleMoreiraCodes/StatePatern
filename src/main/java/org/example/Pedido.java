@@ -2,39 +2,39 @@ package org.example;
 
 public class Pedido {
 
-    private String nome;
+    private String descricao;
     private PedidoEstado estado;
 
     public Pedido() {
-        this.estado = PedidoEstadoFeito.getInstance();
+        this.estado = PedidoEstadoRecebido.getInstance();
     }
 
     public void setEstado(PedidoEstado estado) {
         this.estado = estado;
     }
 
-    public boolean matricular() {
-        return estado.matricular(this);
+    public boolean receber() {
+        return estado.receber(this);
     }
 
-    public boolean formar() {
-        return estado.formar(this);
+    public boolean preparar() {
+        return estado.preparar(this);
     }
 
-    public boolean trancar() {
-        return estado.trancar(this);
+    public boolean cancelar() {
+        return estado.cancelar(this);
     }
 
-    public boolean jubilar() {
-        return estado.jubilar(this);
+    public boolean entregar() {
+        return estado.entregar(this);
     }
 
-    public boolean evadir() {
-        return estado.evadir(this);
+    public boolean finalizarEntrega() {
+        return estado.finalizarEntrega(this);
     }
 
-    public boolean transferir() {
-        return estado.transferir(this);
+    public boolean finalizarPreparo() {
+        return estado.finalizarPreparo(this);
     }
 
     public String getNomeEstado() {
@@ -42,11 +42,11 @@ public class Pedido {
     }
 
     public String getNome() {
-        return nome;
+        return descricao;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String descricao) {
+        this.descricao = descricao;
     }
 
     public PedidoEstado getEstado() {

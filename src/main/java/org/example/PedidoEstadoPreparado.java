@@ -1,15 +1,25 @@
 package org.example;
 
-public class PedidoEstadoPreparar extends PedidoEstado {
+public class PedidoEstadoPreparado extends PedidoEstado {
 
-    private PedidoEstadoPreparar() {};
-    private static PedidoEstadoPreparar instance = new PedidoEstadoPreparar();
-    public static PedidoEstadoPreparar getInstance() {
+    private PedidoEstadoPreparado() {};
+    private static PedidoEstadoPreparado instance = new PedidoEstadoPreparado();
+    public static PedidoEstadoPreparado getInstance() {
         return instance;
     }
 
     public String getEstado() {
-        return "Preparando o pedido.";
+        return "Pedido pronto.";
+    }
+
+    public boolean entregar(Pedido pedido) {
+        pedido.setEstado(PedidoEstadoEmEntrega.getInstance());
+        return true;
+    }
+
+    public boolean cancelar(Pedido pedido) {
+        pedido.setEstado(PedidoEstadoCancelado.getInstance());
+        return true;
     }
 
 }
